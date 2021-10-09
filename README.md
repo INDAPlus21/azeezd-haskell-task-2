@@ -1,0 +1,1 @@
+# azeezd-haskell-task-2
