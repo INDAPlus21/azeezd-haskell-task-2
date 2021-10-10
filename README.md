@@ -1,5 +1,5 @@
 # Azeez Daoud (azeezd) Haskell Uppgift 2
-Code is under `src/`, answers to written exercises is under `docs/`.
+Code is under `src/`, answers to written exercises ARE under `docs/`.
 
 Proof for kattis is provided as `proof.png`
 
@@ -30,7 +30,7 @@ The function is built on two other functions `letterCounter` and `wordCounter` i
 ### `letterCounter'`, the generalisation of `letterCounter`
 1. Take a (String, Double), call it `(str, n)`
 2. If first character in String part is an alphabet call `letterCount'(TAIL OF str, n+1)` (recursive part)
-3. Otherwise (first character not an alphabet) call letterCount`(TAIL OF str, n), note `n` is unchanged (recursive part).
+3. Otherwise (first character not an alphabet) call letterCount `(TAIL OF str, n)`, note `n` is unchanged (recursive part).
 4. if `str` is empty return `(str, n)`
 
 `letterCount` takes a string `str` and calls `letterCount'` with the parameters `(str, 0)`.
@@ -38,7 +38,7 @@ The function is built on two other functions `letterCounter` and `wordCounter` i
 ### `wordCounter'`, the generalisation of `wordCounter`
 1. Take a (Char, String, Double), call it `(c, str, n)`
 2. If previous character `c` is non-alphabetical and the head of `str` is an alphabet then we encountered a new word, call `wordCounter'(HEAD OF str, TAIL OF str, n + 1)` (recursive part)
-3. Otherwise (both `c` and head are alphabets, still in a word. Or neither are alphabets, still haven't encountered a new word), call wordCounter`(HEAD OF str, TAIL OF str, n), note `n` is unchanged (recursive part)
+3. Otherwise (both `c` and head are alphabets, still in a word. Or neither are alphabets, still haven't encountered a new word), call wordCounter `(HEAD OF str, TAIL OF str, n)`, note `n` is unchanged (recursive part)
 4. if `str` is empty return `(c, str, n)`
 
 `wordCount` takes a string `str` and calls `wordCount'` with the parameters `(' ', str, 0)`.
