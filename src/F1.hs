@@ -82,3 +82,21 @@ medellangd :: String -> Double
 medellangd [] = 0
 medellangd str = letterCounter str / wordCounter str
 
+-- Get every second element in a list by jumping over a element
+everySecond :: [a] -> [a]
+everySecond [] = []
+everySecond [a] = [a]
+everySecond (x:y:xs) = x:everySecond xs
+
+{-
+Shuffles the given list using the algorithm in the exercise.
+
+Algorithm (Recursion):
+It uses the everySecond function above to get every second element.
+Get every second element of the given list and prepend it to
+Skyffla of every second element, starting from the next elememt.
+-}
+skyffla :: [a] -> [a]
+skyffla [] = []
+skyffla [a] = [a]
+skyffla (x:xs) = everySecond (x:xs) ++ skyffla(everySecond xs)
