@@ -1,5 +1,8 @@
+module F1 where
 import Data.Char
-
+sum :: Integral n, Num n => n -> n -> n
+sum s 0 = s
+sum s n = sum (s + n) (pred n)
 -- Calculate Fibbonacci number using the Golden Ratio formula (from course SF1671)
 phi = (1 + sqrt 5) / 2
 fib :: Float -> Integer
